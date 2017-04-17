@@ -41,6 +41,19 @@ if (!success) throw webHook.Exception;
 
 
 ## Running the Unit Tests
-There are numerous unit tests for both the WebHook and Event object. To execute the WebHook
+There are numerous unit tests for both the WebHook and Event object. To execute the WebHook unit tests, you must first set your apiLoginID, apiTransactionKey, and notifyUrl (for example, a test url from http://requestb.in)
 
+To execute the Event Unit tests, you need to set your signature:
+
+```csharp
+// Note:You must have configured a Signature Key in the Authorize.Net Merchant Interface before you can receive Webhooks 
+// notifications. This signature key is used to create a message hash to be sent with each notification that the merchant 
+// can then use to verify the notification is genuine. The signature key can be obtained in the Authorize.Net Merchant 
+// Interface, at Account > Settings > Security Settings > General Security Settings > API Credentials and Keys
+
+string signatureKey = "<<Enter your signature key here >>";
+
+```
+
+From the response your receive from your notification URL, you will need the JSON Raw Body, and the text from the response header for X-ANET-Signature.
 
