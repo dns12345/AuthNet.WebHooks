@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6D262E7-58DC-46C6-9DD6-734F69BAE978}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AuthNet.WebHooks</RootNamespace>
+    <AssemblyName>AuthNet.WebHooks</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Event.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="support\event\customerEvent.cs" />
+    <Compile Include="support\event\miscell\customerProfile.cs" />
+    <Compile Include="support\event\fraudEvent.cs" />
+    <Compile Include="support\event\miscell\fraudList.cs" />
+    <Compile Include="support\event\miscell\fraudPayload.cs" />
+    <Compile Include="support\event\miscell\payloadProfile.cs" />
+    <Compile Include="support\event\miscell\paymentProfile.cs" />
+    <Compile Include="support\event\paymentProfileEvent.cs" />
+    <Compile Include="support\event\subscriptionEvent.cs" />
+    <Compile Include="support\event\miscell\subscriptionPayload.cs" />
+    <Compile Include="support\webhook\anResponse.cs" />
+    <Compile Include="support\webhook\details.cs" />
+    <Compile Include="support\event\miscell\eventResponse.cs" />
+    <Compile Include="support\webhook\EventType.cs" />
+    <Compile Include="support\webhook\EventTypes.cs" />
+    <Compile Include="support\webhook\links.cs" />
+    <Compile Include="support\event\miscell\payloadCustomer.cs" />
+    <Compile Include="support\event\miscell\payloadPayment.cs" />
+    <Compile Include="support\event\paymentEvent.cs" />
+    <Compile Include="support\webhook\self.cs" />
+    <Compile Include="support\webhook\WebHooks.cs" />
+    <Compile Include="WebHook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
