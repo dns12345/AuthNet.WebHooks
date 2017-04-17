@@ -9,7 +9,7 @@ namespace AuthNet.WebHooks.Tests
     {
 
         // Note:You must have configured a Signature Key in the Authorize.Net Merchant Interface before you can receive Webhooks notifications. This signature key is used to create a message hash to be sent with each notification that the merchant can then use to verify the notification is genuine. The signature key can be obtained in the Authorize.Net Merchant Interface, at Account > Settings > Security Settings > General Security Settings > API Credentials and Keys
-        string signatureKey = "4DE045F02644C02CB16A777282EBA59A51093813C22BAE63030DDC2998524CD44F673DB21699EDAD3F45E534C8ECF48920D98377D7EE5CBE8C90F9333E984664";
+        string signatureKey = "<<Enter your signature key here >>";
 
 
 

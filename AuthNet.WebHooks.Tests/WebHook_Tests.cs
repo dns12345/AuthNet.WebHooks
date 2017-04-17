@@ -15,12 +15,12 @@ namespace AuthNet.WebHooks.Tests
         // Your API Login ID and Transaction Key are unique pieces of information specifically associated with your payment gateway account. 
         // However, the API login ID and Transaction Key are NOT used for logging into the Merchant Interface.  
         // Available from the Authorize.net Admin Portal in Settings | Security Settings | General Security Settings | API Credentials & Keys
-        private string apiLoginID = "288mvgDUrL";
-        private string apiTransactionKey = "423CUehAu3Kw7764";
+        private string apiLoginID = "<< Enter your apiLoginID >>";
+        private string apiTransactionKey = "<< Enter your apiTransactionKey >>";
 
         // The URL where Authorize.Net WebHooks will post notifications.
         // For testing purposes, create a Free endpoint at http://requestb.in
-        private string notifyUrl = "http://requestb.in/15wdzam1";
+        private string notifyUrl = "<< Enter your notify URL >>";
 
 
         private WebHook InitWebHook()
