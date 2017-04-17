@@ -14,14 +14,29 @@ Here's an example of creating a WebHook:
 // Your API Login ID and Transaction Key are unique pieces of information specifically associated with your payment gateway account. 
 // However, the API login ID and Transaction Key are NOT used for logging into the Merchant Interface.  
 // Available from the Authorize.net Admin Portal in Settings | Security Settings | General Security Settings | API Credentials & Keys
-
 string apiLoginID = "<< Enter your apiLoginID >>";
 string apiTransactionKey = "<< Enter your apiTransactionKey >>";
+
+// The URL where Authorize.Net WebHooks will post notifications.
+// For testing purposes, create a Free endpoint at http://requestb.in
+string notifyUrl = "<< Enter your notify URL >>";
+
 bool sandbox = true;
         
 var webHook = new WebHook(apiLoginID, apiTransactionKey, sandbox);
 
-alert(s);
+webHook.name = "My new Webhook";
+webHook.url = notifyUrl;
+webHook.status = "active";
+webHook.eventTypes = new List<string>();
+webHook.eventTypes.Add("net.authorize.payment.authcapture.created");
+webHook.eventTypes.Add("net.authorize.customer.created");
+webHook.eventTypes.Add("net.authorize.customer.paymentProfile.created");
+
+var success = webHook.Save();
+if (!success) throw webHook.Exception;
+    
+
 ```
 
 
