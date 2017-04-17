@@ -11,7 +11,16 @@ There are 2 main classes in the solution:
 Here's an example of creating a WebHook:
 
 ```csharp
-var s = "JavaScript syntax highlighting";
+// Your API Login ID and Transaction Key are unique pieces of information specifically associated with your payment gateway account. 
+// However, the API login ID and Transaction Key are NOT used for logging into the Merchant Interface.  
+// Available from the Authorize.net Admin Portal in Settings | Security Settings | General Security Settings | API Credentials & Keys
+
+string apiLoginID = "<< Enter your apiLoginID >>";
+string apiTransactionKey = "<< Enter your apiTransactionKey >>";
+bool sandbox = true;
+        
+var webHook = new WebHook(apiLoginID, apiTransactionKey, sandbox);
+
 alert(s);
 ```
 
