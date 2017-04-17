@@ -10,7 +10,7 @@ There are 2 main classes in the solution:
 
 Here's an example of creating a WebHook:
 
-```javascript
+```csharp
 var s = "JavaScript syntax highlighting";
 alert(s);
 ```
