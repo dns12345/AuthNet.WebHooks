@@ -38,7 +38,7 @@ if (!success) throw webHook.Exception;
     
 
 ```
-Parsing the event data received from your notification URL can be accoplised like this:
+Parsing the event data received from your notification URL can be accomplished like this:
 
 ```csharp
 // Note:You must have configured a Signature Key in the Authorize.Net Merchant Interface before you can receive Webhooks 
@@ -49,7 +49,7 @@ string signatureKey = "<<Enter your signature key here >>";
 
 // from your response data sent to your notification url, you will need the Raw Body (JSON) and the X-ANET-Signature
 // from the response header.  This class will use your signature key and json body to create a SHA512 token, and
-// compare it with the X-ANET-Signature value to make sure the mrssage has not been modified.
+// compare it with the X-ANET-Signature value to make sure the message has not been modified.
 string Raw_JSON_Body = ""{\"notificationId\":\"ff8acc67-a473-4550-8e13-da30ed54ab7d\",\"eventType\":\"net.authorize.customer.deleted\",\"eventDate\":\"2017-04-15T20:39:48.68994Z\",\"webhookId\":\"5eca3570-70a4-4293-aec1-5fa7bdf0183b\",\"payload\":{\"entityName\":\"customerProfile\",\"id\":\"1811525753\"}}"";
 string X_Anet_Signature = "0BB9379EB6F2FFC6DD53AEE5F30899303D4A49784B2268B4C93788ED7F89242E1261C390853166C9791160755910E0CB2AB3971799F0A45E25BD16EC1E12E603";
 
@@ -93,5 +93,5 @@ switch (jsonEventType)
 ## Running the Unit Tests
 There are numerous unit tests for both the WebHook and Event object. To execute the WebHook unit tests, you must first set your apiLoginID, apiTransactionKey, and notifyUrl (for example, a test url from http://requestb.in)
 
-To execute the Event Unit tests, you need to set your signature key.  From the response your receive from your notification URL, you will need the JSON Raw Body, and the text from the response header for X-ANET-Signature.
+To execute the Event Unit tests, you need to set your signature key.  From the response you receive from your notification URL, you will need the JSON Raw Body, and the text from the response header for X-ANET-Signature.
 
